@@ -1,0 +1,40 @@
+{
+  "name": "awmlc",
+  "version": "0.1.0",
+  "description": "AWML Compiler - Compiles web application source code into AWML (AI Web Markup Language), the standard document format for AI browsers.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "awmlc": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@typescript-eslint/typescript-estree": "^8.0.0",
+    "glob": "^11.0.0",
+    "typescript": "^5.5.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "vitest": "^2.0.0",
+    "@types/node": "^22.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "awml",
+    "ai-web-markup-language",
+    "ai-browser",
+    "compiler",
+    "static-analysis",
+    "web-schema"
+  ],
+  "license": "MIT"
+}
