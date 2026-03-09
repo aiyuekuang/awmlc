@@ -135,7 +135,7 @@ awmlc performs **static analysis** at build time — it never executes your code
 
 ## Related Projects
 
-- **[ai-browser](https://github.com/anthropics/ai-browser)** — The AI browser that reads AWML documents via MCP protocol
+- **[Zenith](https://github.com/aiyuekuang/zenith)** — The next-generation AI browser that reads AWML documents via MCP protocol
 
 ## License
 
