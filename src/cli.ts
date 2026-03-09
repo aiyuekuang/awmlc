@@ -42,7 +42,7 @@ async function main() {
   // CLI args override config file
   const serverUrl = getArg(args, '--server') || config?.server;
   const framework = (getArg(args, '--framework') || config?.framework) as 'umi' | 'next' | 'vite' | undefined;
-  const output = getArg(args, '--output') || config?.output || 'app.awml.json';
+  const output = getArg(args, '--output') || config?.output || '.awml/app.awml.json';
   const pretty = args.includes('--pretty');
 
   console.log(`awmlc: compiling ${projectDir}`);
@@ -60,6 +60,10 @@ async function main() {
 
     const json = JSON.stringify(doc, null, pretty ? 2 : undefined);
     const outputPath = path.isAbsolute(output) ? output : path.join(projectDir, output);
+    const outputDir = path.dirname(outputPath);
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
     fs.writeFileSync(outputPath, json, 'utf-8');
 
     console.log(`  -> ${outputPath}`);
@@ -126,7 +130,7 @@ Usage:
 Options:
   --server <url>       Override API server base URL
   --framework <name>   Framework override (umi, next, vite)
-  --output <path>      Output file path (default: app.awml.json)
+  --output <path>      Output file path (default: .awml/app.awml.json)
   --pretty             Pretty-print JSON output
   --help, -h           Show this help
 
