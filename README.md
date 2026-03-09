@@ -1,6 +1,6 @@
 # awmlc
 
-**AWML Compiler** - Compiles web application source code into [AWML](https://github.com/anthropics/awml-spec) (AI Web Markup Language).
+**AWML Compiler** — Compiles web application source code into AWML (AI Web Markup Language), the standard document format for [Zenith](https://github.com/aiyuekuang/zenith).
 
 ## What is AWML?
 
@@ -8,7 +8,7 @@
 
 ```
 Traditional web:  Source Code → webpack/vite → HTML/JS/CSS → Chrome renders for humans
-AI web:           Source Code → awmlc        → AWML        → AI Browser reads for agents
+AI web:           Source Code → awmlc        → AWML        → Zenith reads for agents
 ```
 
 ### The Problem
